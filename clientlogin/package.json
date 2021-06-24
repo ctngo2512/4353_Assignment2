@@ -1,14 +1,15 @@
 {
-  "name": "login-register-react",
+  "name": "clientlogin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "delay": "^4.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-pose": "^4.0.8",
-    "react-scripts": "3.0.1",
-    "react-spring": "^8.0.20"
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,7 +18,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -32,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^6.0.0"
   }
 }
