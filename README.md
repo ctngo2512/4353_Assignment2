@@ -1,4 +1,3 @@
-This is BigFatTony's big, fat branch.
 
 Assignment 2
 
