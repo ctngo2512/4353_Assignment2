@@ -33,9 +33,11 @@ const App = () => {
           case "auth/user-disabled":
           case "auth/user-not-found":
             setEmailError(err.message);
+            clearInputs();
             break;
           case "auth/wrong-password":
             setPasswordError(err.message);
+            clearInputs();
             break;
         }
       });
@@ -51,9 +53,11 @@ const App = () => {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
             setEmailError(err.message);
+            clearInputs();
             break;
           case "auth/weak-password":
             setPasswordError(err.message);
+            clearInputs();
             break;
         }
       });
