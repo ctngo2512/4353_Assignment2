@@ -1,4 +1,5 @@
 import React from 'react';
+import loginImg from "./loginImg.png";
 
 const Login = (props) => {
 
@@ -7,6 +8,9 @@ const Login = (props) => {
     return (
         <section className="login">
             <div className="loginContainer">
+                <div className="image">
+                    <img src={loginImg}/>
+                </div>
                 <label>Username</label>
                 <input type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value) } />
                 <p className="errorMsg">{emailError}</p>

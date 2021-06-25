@@ -44,6 +44,10 @@ button {
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
+.login .loginContainer .image {
+  justify-content: center;
+}
+
 .login .loginContainer label {
   color: white;
   margin: 14px 0;
