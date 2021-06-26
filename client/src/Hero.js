@@ -23,7 +23,7 @@ const Hero = ({handleLogout}) => {
             </nav>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">Contact Manager</h1>
+                    <h1 className="display-4 text-center">Profile</h1>
                 </div>
             </div>
             <div className="row">
