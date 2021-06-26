@@ -3,7 +3,7 @@ import loginImg from "./loginImg.png";
 
 const Login = (props) => {
 
-    const { email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
+    const { email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError, clearErrors } = props;
 
     return (
         <section className="login">
@@ -12,7 +12,7 @@ const Login = (props) => {
                     <img src={loginImg}/>
                 </div>
                 <label>Username</label>
-                <input type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="text" onClick = {clearErrors} autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} />
                 <p className="errorMsg">{emailError}</p>
                 <label>Password</label>
                 <input type="password" required value = {password} onChange={(e) => setPassword(e.target.value)} />
