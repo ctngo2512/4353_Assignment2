@@ -1,6 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import fire from "./fire";
 
-const Hero = ({handleLogout}) => {
+const Hero = (props) => {
+    const {
+        handleLogout, name, setName, address, setAddress, city, setCity, state, setState, zipcode, setZipcode
+    } = props;
+
+    var [currentId, setCurrentId] = useState('');
+    var [contactObjects, setContactObjects] = useState({})
+
+    //Once components load complete
+    useEffect(() => {
+        fire.child('contacts').on('value', snapshot => {
+            if (snapshot.val() != null) {
+                setContactObjects({
+                    ...snapshot.val()
+                });
+            }
+        })
+    }, [])
+
+
+    const addOrEdit = (obj) => {
+      /*need to implement both insert
+      and update operation*/
+    }
+
+    const onDelete = id => {
+        // record with given id is to be deleted.
+    }
+
     return (
         <section className="hero">
             <nav>
