@@ -13,8 +13,12 @@ button {
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #1854d4;
+  background: #1b59df;
   cursor: pointer;
+}
+
+button:hover{
+  background: #3082fe;
 }
 
 .login {
@@ -58,9 +62,22 @@ button {
   outline: none;
   font-size: 19px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(252, 252, 252, 0.1);
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
+}
+
+
+.login .loginContainer input:focus {
+  animation: glowing 1s linear infinite alternate;
+  -webkit-animation: glowing 1s linear infinite alternate;
+  transition: 1s all;
+}
+
+.login .loginContainer input:hover {
+  animation: glowing 1s linear infinite alternate;
+  -webkit-animation: glowing 1s linear infinite alternate;
+  transition: 1s all;
 }
 
 .login .loginContainer .btnContainer {
@@ -122,3 +139,22 @@ button {
   background: #3a2b58;
 }
 
+
+
+@keyframes glowing {
+  from {
+    box-shadow: inset 0 0 20px 20px #e3e7f046, 0 0 50px 10px #e3e7f04a, inset 0 0 80px 80px #e3e7f041;
+  }
+  to {
+    box-shadow: inset 0 0 20px 20px #e3e7f04f, 0 0 100px 10px #e3e7f05d, inset 0 0 50px 50px #e3e7f068;
+  }
+}
+
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: inset 0 0 20px 20px #e3e7f046, 0 0 50px 10px #e3e7f06f, inset 0 0 80px 80px #e3e7f066;
+  }
+  to {
+    box-shadow: inset 0 0 20px 20px #e3e7f0, 0 0 130px 10px #e3e7f0, inset 0 0 50px 50px #e3e7f0;
+  }
+}
