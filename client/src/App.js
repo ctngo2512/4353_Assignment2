@@ -17,6 +17,8 @@ const App = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipcode, setZipcode] = useState('');
+  //for displaying the gas info form
+  const [gasForm, openGasForm] = useState('');
 
   const clearInputs = () => {
     setEmail('');
@@ -124,6 +126,7 @@ const App = () => {
           setHasAccount={setHasAccount}
           emailError={emailError}
           passwordError={passwordError}
+          clearErrors={clearErrors}
       />
       )}
     </div>
