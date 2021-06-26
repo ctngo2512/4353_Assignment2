@@ -9,6 +9,12 @@ const Hero = ({handleLogout}) => {
     const addOrEdit = (obj) => {
       /*need to implement both insert
       and update operation*/
+
+      /* Connect to Firebase DB for user
+         Get user from Authenication details
+         Find related info
+
+       */
     }
 
     const onDelete = id => {
