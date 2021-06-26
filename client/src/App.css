@@ -35,12 +35,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(
-    ellipse at left bottom,
-    rgba(21, 200, 245, 0.9) 0%,
-    rgb(24, 82, 207) 100%,
-    rgba(116, 207, 243, 0.9) 59%
-  );
+  background: rgb(4,86,111);
+  background: linear-gradient(180deg, rgba(4,86,111,0.31836484593837533) 25%, rgba(255,255,255,0.2007177871148459) 90%);
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
