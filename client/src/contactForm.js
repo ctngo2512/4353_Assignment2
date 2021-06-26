@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 const ContactForm = (props) => {
     const initialFieldValues = {
         fullName: '',
-        mobile: '',
-        email: '',
-        address: ''
+        address: '',
+        city: '',
+        state: '',
+        zipcode: ''
     }
 
     var [values, setValues] = useState(initialFieldValues)
@@ -54,8 +55,8 @@ const ContactForm = (props) => {
                         </div>
                     </div>
 
-                    <input className="form-control" name="mobile" placeholder="Mobile"
-                        value={values.mobile}
+                    <input className="form-control" name="address" placeholder="Address"
+                        value={values.address}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -65,16 +66,21 @@ const ContactForm = (props) => {
                             <i className="fas fa-envelope"></i>
                         </div>
                     </div>
-                    <input className="form-control" name="email" placeholder="Email"
-                        value={values.email}
+                    <input className="form-control" name="city" placeholder="City"
+                        value={values.city}
                         onChange={handleInputChange}
                     />
                 </div>
             </div>
             <div className="form-group">
-            /*instead of this input use textarea - issue with my syntax highlighter */
-               <input className="form-control" name="address" placeholder="Address"
-                    value={values.address}
+               <input className="form-control" name="state" placeholder="State"
+                    value={values.state}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="form-group">
+               <input className="form-control" name="zipcode" placeholder="Zipcode"
+                    value={values.zipcode}
                     onChange={handleInputChange}
                 />
             </div>

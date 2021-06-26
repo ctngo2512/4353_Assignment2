@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Login from './Login';
 import Hero from './Hero';
-import ContactForm from "./contactForm";
-
+import ContactForm from './contactForm';
 import './App.css';
 
 const App = () => {
@@ -13,11 +12,6 @@ const App = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zipcode, setZipcode] = useState('');
 
   const clearInputs = () => {
     setEmail('');
@@ -93,19 +87,11 @@ const App = () => {
   return (
     <div className = "App">
       {user ? (
-        <Hero 
-          handleLogout={handleLogout}
-          name={name}
-          setName={setName}
-          address={address}
-          setAddress={setAddress}
-          city={city}
-          setCity={setCity}
-          state={state}
-          setState={setState}
-          zipcode={zipcode}
-          setZipcode={setZipcode}
-      />
+        <div className="row">
+          <div className="col-md-8 offset-md-2">
+            <Hero></Hero>
+          </div>
+        </div>
       
       ) : (
         <Login 
