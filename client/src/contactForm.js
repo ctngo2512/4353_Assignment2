@@ -2,30 +2,18 @@ import React, { useState, useEffect } from 'react';
 
 
 const ContactForm = (props) => {
-    const {
-        name,
-        setName,
-        address,
-        setAddress,
-        city,
-        setCity,
-        state,
-        setState,
-        zipcode,
-        setZipcode,
-        currentId,
-        setCurrentId,
-        contactObjects,
-        setContactObjects,
-        handleLogout,
-        addOrEdit,
-        onDelete,
-    } = props;
-
+    const initialFieldValues = {
+        name: '',
+        address: '',
+        city: '',
+        state: '',
+        zipcode: ''
+    }
+    var [values, setValues] = useState(initialFieldValues)
 
     useEffect(() => {
         if (props.currentId == '')
-            setValues({})
+            setValues({ ...initialFieldValues })
         else
             setValues({
                 ...props.contactObjects[props.currentId]
@@ -54,7 +42,7 @@ const ContactForm = (props) => {
                     </div>
                 </div>
                 <input className="form-control" name="fullName" placeholder="Full Name"
-                    value={values.fullName}
+                    value={values.name}
                     onChange={handleInputChange}
                 />
             </div>

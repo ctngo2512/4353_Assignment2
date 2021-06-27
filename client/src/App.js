@@ -5,22 +5,21 @@ import Hero from './Hero';
 import ContactForm from './contactForm';
 import './App.css';
 
-const App = () => {
+const App = (props) => {
+  const {
+    name,
+    address,
+    city,
+    state,
+    zipcode
+  } = props;
+
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zipcode, setZipcode] = useState('');
-  const [currentId, setCurrentId] = useState('');
-  const [contactObjects, setContactObjects] = useState({});
-  //for displaying the gas info form
-  const [gasForm, openGasForm] = useState('');
 
   const clearInputs = () => {
     setEmail('');
@@ -77,39 +76,6 @@ const App = () => {
     fire.auth().signOut();
   };
 
-  const addOrEdit = (obj) => {
-    if (currentId == '')
-        fire.child('contacts').push(
-            obj,
-            err => {
-                if (err)
-                    console.log(err)
-                else
-                    setCurrentId('')
-            })
-    else
-        fire.child(`contacts/${currentId}`).set(
-            obj,
-            err => {
-                if (err)
-                    console.log(err)
-                else
-                    setCurrentId('')
-            })
-}
-
-const onDelete = id => {
-  if (window.confirm('Are you sure to delete this record?')) {
-      fire.child(`contacts/${id}`).remove(
-          err => {
-              if (err)
-                  console.log(err)
-              else
-                  setCurrentId('')
-          })
-  }
-}
-
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user){
@@ -134,15 +100,10 @@ const onDelete = id => {
             <Hero
             handleLogout={handleLogout}
             name={name}
-            setName={setName}
             address={address}
-            setAddress={setAddress}
             city={city}
-            setCity={setCity}
             state={state}
-            setState={setState}
             zipcode={zipcode}
-            setZipcode={setZipcode}
           />
 
 
