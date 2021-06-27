@@ -9,6 +9,12 @@ const Hero = ({handleLogout}) => {
     const addOrEdit = (obj) => {
       /*need to implement both insert
       and update operation*/
+
+      /* Connect to Firebase DB for user
+         Get user from Authenication details
+         Find related info
+
+       */
     }
 
     const onDelete = id => {
@@ -23,7 +29,7 @@ const Hero = ({handleLogout}) => {
             </nav>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">Contact Manager</h1>
+                    <h1 className="display-4 text-center">Profile</h1>
                 </div>
             </div>
             <div className="row">

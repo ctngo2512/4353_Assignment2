@@ -155,6 +155,14 @@ button:hover{
 }
 
 
+.hero div.jumbotron-fluid{
+  height: 2px;
+  padding-top: 1%;
+  background: rgb(4,86,111);
+background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
+  color: white;
+}
+
 
 @keyframes glowing {
   from {
