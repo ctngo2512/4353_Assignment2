@@ -1,10 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Login from './Login';
 import Hero from './Hero';
+import ContactForm from './contactForm';
 import './App.css';
 
-const App = () => {
+const App = (props) => {
+  const {
+    name,
+    address,
+    city,
+    state,
+    zipcode
+  } = props;
+
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -86,7 +95,21 @@ const App = () => {
   return (
     <div className = "App">
       {user ? (
-        <Hero handleLogout={handleLogout}/>
+        <div className="row">
+          <div className="col-md-8 offset-md-2">
+            <Hero
+            handleLogout={handleLogout}
+            name={name}
+            address={address}
+            city={city}
+            state={state}
+            zipcode={zipcode}
+          />
+
+
+          </div>
+        </div>
+      
       ) : (
         <Login 
           email={email}
@@ -99,6 +122,7 @@ const App = () => {
           setHasAccount={setHasAccount}
           emailError={emailError}
           passwordError={passwordError}
+          clearErrors={clearErrors}
       />
       )}
     </div>
