@@ -41,7 +41,7 @@ const ContactForm = (props) => {
                         <i className="fas fa-user"></i>
                     </div>
                 </div>
-                <input className="form-control" name="fullName" placeholder="Full Name"
+                <input className="form-control" name="name" placeholder="Full Name"
                     value={values.name}
                     onChange={handleInputChange}
                 />
