@@ -2,20 +2,30 @@ import React, { useState, useEffect } from 'react';
 
 
 const ContactForm = (props) => {
-    const initialFieldValues = {
-        fullName: '',
-        address: '',
-        city: '',
-        state: '',
-        zipcode: ''
-    }
-
-    var [values, setValues] = useState(initialFieldValues)
+    const {
+        name,
+        setName,
+        address,
+        setAddress,
+        city,
+        setCity,
+        state,
+        setState,
+        zipcode,
+        setZipcode,
+        currentId,
+        setCurrentId,
+        contactObjects,
+        setContactObjects,
+        handleLogout,
+        addOrEdit,
+        onDelete,
+    } = props;
 
 
     useEffect(() => {
         if (props.currentId == '')
-            setValues({ ...initialFieldValues })
+            setValues({})
         else
             setValues({
                 ...props.contactObjects[props.currentId]

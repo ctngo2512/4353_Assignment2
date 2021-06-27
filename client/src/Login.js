@@ -3,7 +3,18 @@ import loginImg from "./loginImg.png";
 
 const Login = (props) => {
 
-    const { email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError, clearErrors } = props;
+    const { 
+        email, 
+        setEmail, 
+        password, 
+        setPassword, 
+        handleLogin, 
+        handleSignup, 
+        hasAccount, 
+        setHasAccount, 
+        emailError, 
+        passwordError, 
+        clearErrors } = props;
 
     return (
         <section className="login">

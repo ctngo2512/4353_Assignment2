@@ -17,6 +17,8 @@ const App = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipcode, setZipcode] = useState('');
+  const [currentId, setCurrentId] = useState('');
+  const [contactObjects, setContactObjects] = useState({});
   //for displaying the gas info form
   const [gasForm, openGasForm] = useState('');
 
@@ -74,6 +76,39 @@ const App = () => {
   const handleLogout = () => {
     fire.auth().signOut();
   };
+
+  const addOrEdit = (obj) => {
+    if (currentId == '')
+        fire.child('contacts').push(
+            obj,
+            err => {
+                if (err)
+                    console.log(err)
+                else
+                    setCurrentId('')
+            })
+    else
+        fire.child(`contacts/${currentId}`).set(
+            obj,
+            err => {
+                if (err)
+                    console.log(err)
+                else
+                    setCurrentId('')
+            })
+}
+
+const onDelete = id => {
+  if (window.confirm('Are you sure to delete this record?')) {
+      fire.child(`contacts/${id}`).remove(
+          err => {
+              if (err)
+                  console.log(err)
+              else
+                  setCurrentId('')
+          })
+  }
+}
 
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {

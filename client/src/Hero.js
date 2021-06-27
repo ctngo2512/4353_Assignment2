@@ -2,24 +2,27 @@ import React, { useState, useEffect } from 'react';
 import fire from "./fire";
 import ContactForm from "./contactForm";
 
-const Hero = ({handleLogout}) => {
-    var [currentId, setCurrentId] = useState('');
-    var [contactObjects, setContactObjects] = useState({})
-
-    const addOrEdit = (obj) => {
-      /*need to implement both insert
-      and update operation*/
-
-      /* Connect to Firebase DB for user
-         Get user from Authenication details
-         Find related info
-
-       */
-    }
-
-    const onDelete = id => {
-        // record with given id is to be deleted.
-    }
+const Hero = (props) => {
+    
+    const {
+        name,
+        setName,
+        address,
+        setAddress,
+        city,
+        setCity,
+        state,
+        setState,
+        zipcode,
+        setZipcode,
+        currentId,
+        setCurrentId,
+        contactObjects,
+        setContactObjects,
+        handleLogout,
+        addOrEdit,
+        onDelete,
+    } = props;
 
     return (
         <section className="hero">
