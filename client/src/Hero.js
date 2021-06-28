@@ -16,13 +16,18 @@ const Hero = ({handleLogout}) => {
                     console.log(err);
             }
         );
-        db.on('value', (snapshot) => {
+
+        //Include method to get the user id from App.js
+        //Use that to add to user node in the database
+
+       // alert(fire.auth().id);
+      /*  db.on('value', (snapshot) => {
 
            // const dt = snapshot.val();
            // alert(dt);
            //db.push('Tropicana');
            return;
-        })
+        })*/
         
       }
   
