@@ -6,9 +6,24 @@ const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
+    //pushes profile contact info to the firebase database
     const addOrEdit = (obj) => {
-        /*need to implement both insert
-        and update operation*/
+ 
+        var db = fire.database().ref().child('Test').push(
+            obj,
+            err => {
+                if(err)
+                    console.log(err);
+            }
+        );
+        db.on('value', (snapshot) => {
+
+           // const dt = snapshot.val();
+           // alert(dt);
+           //db.push('Tropicana');
+           return;
+        })
+        
       }
   
     const onDelete = id => {
@@ -24,7 +39,7 @@ const Hero = ({handleLogout}) => {
             </nav>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">Contact Manager</h1>
+                    <h1 className="display-4 text-center">Profile</h1>
                 </div>
             </div>
             <div className="row">
