@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Nunito", sans-serif;
+  font-family:'Times New Roman', Times, serif;
   
 }
 
@@ -24,7 +24,7 @@ button {
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #1b59df;
+  background: #072361;
   cursor: pointer;
 }
 
@@ -73,16 +73,9 @@ button:hover{
   outline: none;
   font-size: 19px;
   padding: 10px;
-  background: rgba(252, 252, 252, 0.1);
-  color: rgb(255, 255, 255);
+  background: rgba(8, 8, 8, 0.1);
+  color: white;
   letter-spacing: 1px;
-}
-
-
-.login .loginContainer input:focus {
-  animation: glowing 1s linear infinite alternate;
-  -webkit-animation: glowing 1s linear infinite alternate;
-  transition: 1s all;
 }
 
 .login .loginContainer input:hover {
@@ -99,7 +92,7 @@ button:hover{
 .login .loginContainer .btnContainer p {
   margin: 14px 0 0 0;
   text-align: right;
-  color: rgb(26, 112, 240);
+  color: black;
 }
 
 .login .loginContainer .btnContainer p span {
@@ -125,9 +118,8 @@ button:hover{
   min-height: 100vh;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(41, 151, 211, 0.324) 0%,
-  
-    rgba(17, 27, 75, 0.9) 100%
+    rgba(88, 190, 245, 0.324) 50%,
+    rgba(73, 93, 182, 0.9) 100%
   );
 }
 

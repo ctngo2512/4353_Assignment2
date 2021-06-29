@@ -44,23 +44,11 @@ const Hero = ({handleLogout}) => {
         
       }
   
-    const onDelete = id => {
-        if (window.confirm('Are you sure to delete this record?')) {
-            fire.database().ref().child(`Test/${id}`).remove(
-                err => {
-                    if (err)
-                        console.log(err)
-                    else
-                        setCurrentId('')
-                })
-        }
-    }
-  
 
     return (
         <section className="hero">
             <nav>
-                <h2>Welcome</h2>
+                <h2>Welcome,</h2>
                 <button onClick={handleLogout}>Log Out</button>
             </nav>
             <div className="jumbotron jumbotron-fluid">
@@ -92,14 +80,6 @@ const Hero = ({handleLogout}) => {
                                         <td>{contactObjects[key].city}</td>
                                         <td>{contactObjects[key].state}</td>
                                         <td>{contactObjects[key].zipcode}</td>
-                                        <td className="bg-light">
-                                            <a className="btn text-primary" onClick={() => { setCurrentId(key) }}>
-                                                <i className="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a className="btn text-danger" onClick={() => { onDelete(key) }}>
-                                                <i className="far fa-trash-alt"></i>
-                                            </a>
-                                        </td>
                                     </tr>
                                 ))
                             }
