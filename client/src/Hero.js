@@ -6,6 +6,17 @@ const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
+    //Once components load complete
+    useEffect(() => {
+        fire.database().ref().child('Test').on('value', snapshot => {
+            if (snapshot.val() != null) {
+                setContactObjects({
+                    ...snapshot.val()
+                });
+            }
+        })
+    }, [])
+
     //pushes profile contact info to the firebase database
     const addOrEdit = (obj) => {
  
@@ -13,7 +24,9 @@ const Hero = ({handleLogout}) => {
             obj,
             err => {
                 if(err)
-                    console.log(err);
+                    console.log(err)
+                else
+                    setCurrentId('')
             }
         );
 
@@ -32,7 +45,15 @@ const Hero = ({handleLogout}) => {
       }
   
     const onDelete = id => {
-        // record with given id is to be deleted.
+        if (window.confirm('Are you sure to delete this record?')) {
+            fire.database().ref().child(`Test/${id}`).remove(
+                err => {
+                    if (err)
+                        console.log(err)
+                    else
+                        setCurrentId('')
+                })
+        }
     }
   
 
