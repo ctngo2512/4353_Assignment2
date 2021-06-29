@@ -52,7 +52,6 @@ const ContactForm = (props) => {
                 <div className="form-group input-group col-md-6">
                     <div className="input-group-prepend">
                         <div className="input-group-text">
-                            <i className="fas fa-mobile-alt"></i>
                         </div>
                     </div>
 
@@ -64,7 +63,6 @@ const ContactForm = (props) => {
                 <div className="form-group input-group col-md-6">
                     <div className="input-group-prepend">
                         <div className="input-group-text">
-                            <i className="fas fa-envelope"></i>
                         </div>
                     </div>
                     <input className="form-control" name="city" placeholder="City"
@@ -73,7 +71,11 @@ const ContactForm = (props) => {
                     />
                 </div>
             </div>
-            <div className="form-group">
+            <div className="form-group input-group col-md-0">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                    </div>
+                </div>
                 <select className="form-control" name="state" 
                     value={values.state}
                     onChange={handleInputChange}>
@@ -129,11 +131,14 @@ const ContactForm = (props) => {
                         <option value="WV">West Virginia</option>
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
-
-                </select>				
+                </select>			
             </div>
-            <div className="form-group">
-               <input className="form-control" name="zipcode" placeholder="Zipcode"
+            <div className="form-group input-group col-md-0">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                    </div>
+                </div>
+                <input className="form-control" name="zipcode" placeholder="Zipcode"
                     value={values.zipcode}
                     onChange={handleInputChange}
                 />
