@@ -36,6 +36,7 @@ const ContactForm = (props) => {
 
     return (
         <form autoComplete="off" onSubmit={handleFormSubmit}>
+            <section className = "contact">
             <div className="form-group input-group">
                 <div className="input-group-prepend">
                     <div className="input-group-text">
@@ -137,6 +138,7 @@ const ContactForm = (props) => {
                     onChange={handleInputChange}
                 />
             </div>
+            </section>
         </form>
     );
 }

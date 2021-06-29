@@ -29,7 +29,7 @@ button {
 }
 
 button:hover{
-  background: #3082fe;
+  background: #85b2f5;
 }
 
 .login {
@@ -63,7 +63,7 @@ button:hover{
   color: white;
   margin: 14px 0;
   display: block;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -105,7 +105,7 @@ button:hover{
 }
 
 .login .loginContainer .btnContainer p span:hover {
-  color: rgb(13, 253, 253);
+  color: #85b2f5;
 }
 
 .login .loginContainer .errorMsg {
@@ -119,12 +119,12 @@ button:hover{
   background: radial-gradient(
     ellipse at left bottom,
     rgba(88, 190, 245, 0.324) 50%,
-    rgba(73, 93, 182, 0.9) 100%
+    rgba(78, 92, 170, 0.9) 100%
   );
 }
 
 .hero nav {
-  background: rgba(61, 161, 238, 0.509);
+  background: rgba(78, 92, 170, 0.9);
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -139,11 +139,11 @@ button:hover{
 .hero nav button {
   width: 86px;
   padding: 8px 0;
-  background: #0a77fca1;
+  background: #072361;
 }
 
 .hero nav button:hover{
-  background: #589cf0cd;
+  background: #85b2f5;
 }
 
 
@@ -151,7 +151,7 @@ button:hover{
   height: 2px;
   padding-top: 1%;
   background: rgb(4,86,111);
-background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
+  background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
   color: white;
 }
 
@@ -173,3 +173,18 @@ background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 25
     box-shadow: inset 0 0 20px 20px #e3e7f0, 0 0 130px 10px #e3e7f0, inset 0 0 50px 50px #e3e7f0;
   }
 }
+
+.form-control {
+  background-color: rgba(8, 8, 8, 0.1);
+  color: white;
+  font-size: 18px;
+}
+
+.contact ::placeholder {
+  color: white;
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+}
+
+
