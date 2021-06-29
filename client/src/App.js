@@ -99,14 +99,7 @@ const App = (props) => {
           <div className="col-md-8 offset-md-2">
             <Hero
             handleLogout={handleLogout}
-            name={name}
-            address={address}
-            city={city}
-            state={state}
-            zipcode={zipcode}
           />
-
-
           </div>
         </div>
       
