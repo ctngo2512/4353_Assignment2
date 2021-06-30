@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import fire from "./fire";
 import ContactForm from "./contactForm";
+import gasForm from "./gasForm";
+import Login from './Login';
 
 const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
+
+    const [count,setCount]= useState(false);
 
     //Once components load complete
     useEffect(() => {
@@ -50,7 +54,15 @@ const Hero = ({handleLogout}) => {
             <nav>
                 <h2>Welcome,</h2>
                 <button onClick={handleLogout}>Log Out</button>
+                <button onClick={() => setCount(count)}>
+                    Click me!
+                </button>
             </nav>
+            {count ? (
+                <Login/>
+            ) : (
+                <gasForm/>
+            )}
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4 text-center">Profile</h1>
