@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import fire from "./fire";
-import ContactForm from "./contactForm";
-import gasForm from "./gasForm";
-import Login from './Login';
+import ContactForm from './contactForm';
+import gasForm from './gasForm';
 
 const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
-    const [count,setCount]= useState(false);
+    const [count,setCount]= useState(true);
 
     //Once components load complete
     useEffect(() => {
@@ -59,9 +58,9 @@ const Hero = ({handleLogout}) => {
                 </button>
             </nav>
             {count ? (
-                <Login/>
-            ) : (
                 <gasForm/>
+            ) : (
+                <Hero/>
             )}
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
