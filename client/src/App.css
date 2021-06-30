@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Nunito", sans-serif;
+  font-family:'Times New Roman', Times, serif;
   
 }
 
@@ -24,12 +24,12 @@ button {
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #1b59df;
+  background: #072361;
   cursor: pointer;
 }
 
 button:hover{
-  background: #3082fe;
+  background: #85b2f5;
 }
 
 .login {
@@ -63,7 +63,7 @@ button:hover{
   color: white;
   margin: 14px 0;
   display: block;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -73,16 +73,9 @@ button:hover{
   outline: none;
   font-size: 19px;
   padding: 10px;
-  background: rgba(252, 252, 252, 0.1);
-  color: rgb(255, 255, 255);
+  background: rgba(8, 8, 8, 0.1);
+  color: white;
   letter-spacing: 1px;
-}
-
-
-.login .loginContainer input:focus {
-  animation: glowing 1s linear infinite alternate;
-  -webkit-animation: glowing 1s linear infinite alternate;
-  transition: 1s all;
 }
 
 .login .loginContainer input:hover {
@@ -99,7 +92,7 @@ button:hover{
 .login .loginContainer .btnContainer p {
   margin: 14px 0 0 0;
   text-align: right;
-  color: rgb(26, 112, 240);
+  color: black;
 }
 
 .login .loginContainer .btnContainer p span {
@@ -112,7 +105,7 @@ button:hover{
 }
 
 .login .loginContainer .btnContainer p span:hover {
-  color: rgb(13, 253, 253);
+  color: #85b2f5;
 }
 
 .login .loginContainer .errorMsg {
@@ -125,14 +118,13 @@ button:hover{
   min-height: 100vh;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(41, 151, 211, 0.324) 0%,
-  
-    rgba(17, 27, 75, 0.9) 100%
+    rgba(88, 190, 245, 0.324) 50%,
+    rgba(78, 92, 170, 0.9) 100%
   );
 }
 
 .hero nav {
-  background: rgba(61, 161, 238, 0.509);
+  background: rgba(78, 92, 170, 0.9);
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -147,11 +139,11 @@ button:hover{
 .hero nav button {
   width: 86px;
   padding: 8px 0;
-  background: #0a77fca1;
+  background: #072361;
 }
 
 .hero nav button:hover{
-  background: #589cf0cd;
+  background: #85b2f5;
 }
 
 
@@ -159,7 +151,7 @@ button:hover{
   height: 2px;
   padding-top: 1%;
   background: rgb(4,86,111);
-background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
+  background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
   color: white;
 }
 
@@ -181,3 +173,18 @@ background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 25
     box-shadow: inset 0 0 20px 20px #e3e7f0, 0 0 130px 10px #e3e7f0, inset 0 0 50px 50px #e3e7f0;
   }
 }
+
+.form-control {
+  background-color: rgba(8, 8, 8, 0.1);
+  color: white;
+  font-size: 18px;
+}
+
+.contact ::placeholder {
+  color: white;
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+}
+
+
