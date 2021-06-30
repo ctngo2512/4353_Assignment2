@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import fire from "./fire";
 
 const gasForm = () =>{
     return (
         <section className="hero">
-        <nav>
-            <h2>Hello,</h2>
-        </nav>
+            <nav>
+                <h2>Hello,</h2>
+            </nav>
         </section>
     );
 };
