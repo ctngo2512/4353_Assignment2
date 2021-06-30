@@ -77,6 +77,11 @@ button:hover{
   color: white;
   letter-spacing: 1px;
 }
+.login .loginContainer input:focus {
+  animation: glowing 1s linear infinite alternate;
+  -webkit-animation: glowing 1s linear infinite alternate;
+  transition: 1s all;
+}
 
 .login .loginContainer input:hover {
   animation: glowing 1s linear infinite alternate;
