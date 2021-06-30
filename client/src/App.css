@@ -129,7 +129,7 @@ button:hover{
 }
 
 .hero nav {
-  background: rgba(78, 92, 170, 0.9);
+  background: rgba(175, 214, 226, 0.228) 25%;
   width: 100%;
   padding: 20px 40px;
   display: flex;
@@ -139,6 +139,7 @@ button:hover{
 
 .hero nav h2 {
   color: #fff;
+  font-size: 30px;
 }
 
 .hero nav button {
@@ -154,7 +155,7 @@ button:hover{
 
 .hero div.jumbotron-fluid{
   height: 2px;
-  padding-top: 5%;
+  padding-top: 0%;
   padding-bottom: 10%;
   background: rgb(4,86,111);
   background: linear-gradient(180deg, rgba(175, 214, 226, 0.228) 25%, rgba(255, 255, 255, 0) 90%);
@@ -184,6 +185,10 @@ button:hover{
   background-color: rgba(8, 8, 8, 0.1);
   color: white;
   font-size: 18px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #072361 !important;
 }
 
 .contact ::placeholder {

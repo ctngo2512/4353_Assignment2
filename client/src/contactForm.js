@@ -143,6 +143,11 @@ const ContactForm = (props) => {
                     onChange={handleInputChange}
                 />
             </div>
+            <div className="form-group">
+                <div className="savebtn">
+                <input type="submit" value={props.currentId == "" ? "Save" : "Update"} className="btn btn-primary btn-block" />
+                </div>
+                </div>
             </section>
         </form>
     );
