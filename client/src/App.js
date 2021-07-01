@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Login from './Login';
 import Hero from './Hero';
-import gasForm from './gasForm';
+import GasForm from './GasForm';
 import './App.css';
 
 const App = (props) => {
@@ -117,6 +117,7 @@ const App = (props) => {
           passwordError={passwordError}
           clearErrors={clearErrors}
       />
+      //<GasForm/>
       )}
     </div>
   );

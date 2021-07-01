@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import fire from "./fire";
 import ContactForm from './contactForm';
-import gasForm from './gasForm';
+import GasForm from './GasForm';
 
 const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
@@ -49,6 +49,8 @@ const Hero = ({handleLogout}) => {
   
 
     return (
+    <div className="setTest">
+        { count ? (<GasForm/>) : (
         <section className="hero">
             <nav>
                 <h2>Welcome,</h2>
@@ -57,11 +59,7 @@ const Hero = ({handleLogout}) => {
                     Click me!
                 </button>
             </nav>
-            {count ? (
-                <gasForm/>
-            ) : (
-                <Hero/>
-            )}
+            
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4 text-center">Profile</h1>
@@ -97,9 +95,11 @@ const Hero = ({handleLogout}) => {
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> 
         </section>
-    )
-}
-
+    ) } 
+    </div> );
+    };
+   
+    
 export default Hero;
