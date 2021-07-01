@@ -198,4 +198,18 @@ button:hover{
   line-height: 1;
 }
 
+.gas nav {
+  background: rgba(175, 214, 226, 0.228) 25%;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gas nav h2 {
+  color: #fff;
+  font-size: 30px;
+}
+
 
