@@ -1,14 +1,15 @@
 import React from 'react';
 import fire from "./fire";
 
-const gasForm = () =>{
+const GasForm = () =>{
+  
     return (
         <section className="gas">
             <nav>
-                <h2>Hello,</h2>
+                <h2>Hello, it's me</h2>
             </nav>
         </section>
     )
 }
 
-export default gasForm;
+export default GasForm;
