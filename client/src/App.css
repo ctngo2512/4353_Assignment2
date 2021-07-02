@@ -158,6 +158,10 @@ button:hover{
   color: white;
 }
 
+.hero button.midButton{
+  margin-left: 63%;
+}
+
 
 @keyframes glowing {
   from {
