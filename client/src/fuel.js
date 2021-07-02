@@ -44,7 +44,7 @@ const FuelForm = (props) => {
                         <i className="fas fa-user"></i>
                     </div>
                 </div>
-                <input className="form-control" name="gallons requested" placeholder="gallons"
+                <input className="form-control" name="gallon_requested" placeholder="Gallons Requested"
                     value={values.gallon_requested}
                     onChange={handleInputChange}
                 />
@@ -56,7 +56,7 @@ const FuelForm = (props) => {
                         </div>
                     </div>
 
-                    <input className="form-control" name="address" placeholder="Address"
+                    <input className="form-control" name="delivery_address" placeholder="Delivery Address"
                         value={values.address}
                         onChange={handleInputChange}
                     />
@@ -66,7 +66,7 @@ const FuelForm = (props) => {
                         <div className="input-group-text">
                         </div>
                     </div>
-                    <input className="form-control" name="date" placeholder="Date"
+                    <input className="form-control" name="delivery_date" placeholder="Delivery Date"
                         value={values.delivery_date}
                         onChange={handleInputChange}
                     />
@@ -83,7 +83,7 @@ const FuelForm = (props) => {
                     <div className="input-group-text">
                     </div>
                 </div>
-                <input className="form-control" name="suggested price" placeholder="price"
+                <input className="form-control" name="suggested_price" placeholder="Suggested Price"
                     value={values.suggested_price}
                     onChange={handleInputChange}
                 />
@@ -93,7 +93,7 @@ const FuelForm = (props) => {
                     <div className="input-group-text">
                     </div>
                 </div>
-                <input className="form-control" name="total due" placeholder="due"
+                <input className="form-control" name="total_due" placeholder="Total Due"
                     value={values.total_due}
                     onChange={handleInputChange}
                 />

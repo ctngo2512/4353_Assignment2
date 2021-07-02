@@ -35,6 +35,11 @@ const Hero = ({handleLogout}) => {
   
     return (
         <div className="hero">
+            <nav>
+                <h2>Welcome,</h2>
+                <button     //logout button
+                onClick={handleLogout}>Log Out</button>
+            </nav>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4 text-center">Fuel Page</h1>
