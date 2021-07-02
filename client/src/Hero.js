@@ -3,11 +3,12 @@ import fire from "./fire";
 import ContactForm from "./contactForm";
 import FuelForm from './fuel';
 
+//runs profile page and fuel page
 const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
-    
+    //variables to switch between profile page and fuel page
     const [count, setCount] = useState(false);
     const goBack = () => setCount(value => !value);
     //Once components load complete
@@ -37,6 +38,7 @@ const Hero = ({handleLogout}) => {
     return (
         <div className="hero">
             {count ? (
+                //runs fuel page
             <div className="container">
             
                 <nav>
@@ -85,6 +87,7 @@ const Hero = ({handleLogout}) => {
                 </div>
         
                 ) : (
+                    //runs profile page
             <section className="hero">
                 <nav>
                     <h2>Welcome,</h2>
