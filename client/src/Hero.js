@@ -58,7 +58,7 @@ const Hero = ({handleLogout}) => {
                                 <th>Delivery Address</th>
                                 <th>Delivery Date</th>
                                 <th>Price</th>
-                                <th>Due</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,7 +83,7 @@ const Hero = ({handleLogout}) => {
                 <h2>Welcome,</h2>
                 <button     //logout button
                 onClick={handleLogout}>Log Out</button>
-                <button onClick={() => setCount(count)}>
+                <button onClick={() => setCount(!count)}>
                     Fuel Form
                 </button>
             </nav>

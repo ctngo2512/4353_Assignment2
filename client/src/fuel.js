@@ -41,7 +41,6 @@ const FuelForm = (props) => {
             <div className="form-group input-group">
                 <div className="input-group-prepend">
                     <div className="input-group-text">
-                        <i className="fas fa-user"></i>
                     </div>
                 </div>
                 <input className="form-control" name="gallon_requested" placeholder="Gallons Requested"
@@ -49,55 +48,26 @@ const FuelForm = (props) => {
                     onChange={handleInputChange}
                 />
             </div>
-            <div className="form-row">
-                <div className="form-group input-group col-md-6">
-                    <div className="input-group-prepend">
-                        <div className="input-group-text">
-                        </div>
+            <div className="form-group input-group">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
                     </div>
-
+                </div>
                     <input className="form-control" name="delivery_address" placeholder="Delivery Address"
                         value={values.address}
                         onChange={handleInputChange}
                     />
                 </div>
-                <div className="form-group input-group col-md-6">
-                    <div className="input-group-prepend">
-                        <div className="input-group-text">
-                        </div>
+                <div className="form-group input-group">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
                     </div>
+                </div>
                     <input className="form-control" name="delivery_date" placeholder="Delivery Date"
                         value={values.delivery_date}
                         onChange={handleInputChange}
                     />
                 </div>
-            </div>
-            <div className="form-group input-group col-md-0">
-                <div className="input-group-prepend">
-                    <div className="input-group-text">
-                    </div>
-                </div>			
-            </div>
-            <div className="form-group input-group col-md-0">
-                <div className="input-group-prepend">
-                    <div className="input-group-text">
-                    </div>
-                </div>
-                <input className="form-control" name="suggested_price" placeholder="Suggested Price"
-                    value={values.suggested_price}
-                    onChange={handleInputChange}
-                />
-            </div>
-            <div className="form-group input-group col-md-0">
-                <div className="input-group-prepend">
-                    <div className="input-group-text">
-                    </div>
-                </div>
-                <input className="form-control" name="total_due" placeholder="Total Due"
-                    value={values.total_due}
-                    onChange={handleInputChange}
-                />
-            </div>
             <div className="form-group">
                 <div className="savebtn">
                 <input type="submit" value={props.currentId == "" ? "Save" : "Update"} className="btn btn-primary btn-block" />
