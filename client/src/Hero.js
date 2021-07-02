@@ -40,7 +40,7 @@ const Hero = ({handleLogout}) => {
             <div className="container">
             
                 <nav>
-                    <h2></h2>
+                    <h2>Welcome</h2>
                     <button className="midButton" onClick = {goBack}>Back</button>
                     <button     //logout button
                     onClick={handleLogout}>Log Out</button>
