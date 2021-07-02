@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fire from "./fire";
-//import ContactForm from "./contactForm";
+import ContactForm from "./contactForm";
 import FuelForm from './fuel';
 
 const Hero = ({handleLogout}) => {
@@ -49,7 +49,7 @@ const Hero = ({handleLogout}) => {
     return (
         <section className="hero">
             <nav>
-                <h2></h2>
+                <h2>Welcome,</h2>
                 <button onClick={handleLogout}>Log Out</button>
                 <button onClick={handleLogout}>Fuel</button>
             </nav>
@@ -60,7 +60,7 @@ const Hero = ({handleLogout}) => {
             </div>
             <div className="row">
                 <div className="col-md-5">
-                    <FuelForm {...({ currentId, contactObjects, addOrEdit })} ></FuelForm>
+                    <ContactForm {...({ currentId, contactObjects, addOrEdit })} ></ContactForm>
                 </div>
                 <div className="col-md-7">
                     <table className="table table-borderless table-stripped">
