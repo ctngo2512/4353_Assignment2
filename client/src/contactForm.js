@@ -8,7 +8,8 @@ const ContactForm = (props) => {
         address: '',
         city: '',
         state: '',
-        zipcode: ''
+        zipcode: '',
+        address2: ''
     }
     
     var [values, setValues] = useState(initialFieldValues)
@@ -64,6 +65,7 @@ const ContactForm = (props) => {
                         onChange={handleInputChange}
                     />
                 </div>
+                
                 <div className="form-group input-group col-md-6">
                     <div className="input-group-prepend">
                         <div className="input-group-text">
@@ -71,6 +73,17 @@ const ContactForm = (props) => {
                     </div>
                     <input className="form-control" name="city" placeholder="City"
                         value={values.city}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div className="form-group input-group col-md-6">
+                    <div className="input-group-prepend">
+                        <div className="input-group-text">
+                        </div>
+                    </div>
+
+                    <input className="form-control" name="address2" placeholder="Address Line 2"
+                        value={values.address2}
                         onChange={handleInputChange}
                     />
                 </div>
