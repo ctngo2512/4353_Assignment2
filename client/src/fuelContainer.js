@@ -3,7 +3,7 @@ import fire from "./fire";
 //import ContactForm from "./contactForm";
 import FuelForm from './fuel';
 
-const Hero = ({handleLogout}) => {
+const fuelContainer = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
