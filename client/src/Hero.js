@@ -7,8 +7,9 @@ const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
+    
     const [count, setCount] = useState(false);
-
+    const goBack = () => setCount(value => !value);
     //Once components load complete
     useEffect(() => {
         fire.database().ref().child('Test').on('value', snapshot => {
@@ -40,6 +41,7 @@ const Hero = ({handleLogout}) => {
             
                 <nav>
                     <h2>Welcome,</h2>
+                    <button onClick = {goBack}>Back</button>
                     <button     //logout button
                     onClick={handleLogout}>Log Out</button>
                 </nav>
