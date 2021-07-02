@@ -41,7 +41,7 @@ const Hero = ({handleLogout}) => {
             
                 <nav>
                     <h2>Welcome,</h2>
-                    <button onClick = {goBack}>Back</button>
+                    <button className="midButton" onClick = {goBack}>Back</button>
                     <button     //logout button
                     onClick={handleLogout}>Log Out</button>
                 </nav>
@@ -88,11 +88,12 @@ const Hero = ({handleLogout}) => {
             <section className="hero">
                 <nav>
                     <h2>Welcome,</h2>
-                    <button     //logout button
-                    onClick={handleLogout}>Log Out</button>
-                    <button onClick={() => setCount(!count)}>
+                    <button className="midButton" onClick={() => setCount(!count)}>
                         Fuel Form
                     </button>
+                    <button     //logout button
+                    onClick={handleLogout}>Log Out</button>
+                    
                 </nav>
                 <div className="jumbotron jumbotron-fluid">
                     <div className="container">
