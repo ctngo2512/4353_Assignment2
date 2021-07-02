@@ -7,7 +7,7 @@ const Hero = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
-    const [count, setCount] = useState(true);
+    const [count, setCount] = useState(false);
 
     //Once components load complete
     useEffect(() => {
@@ -35,100 +35,101 @@ const Hero = ({handleLogout}) => {
   
     return (
         <div className="hero">
-            <nav>
-                <h2>Welcome,</h2>
-                <button     //logout button
-                onClick={handleLogout}>Log Out</button>
-            </nav>
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4 text-center">Fuel Page</h1>
-                </div>
-            </div>
             {count ? (
+            <div className="container">
+            
+                <nav>
+                    <h2>Welcome,</h2>
+                    <button     //logout button
+                    onClick={handleLogout}>Log Out</button>
+                </nav>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 className="display-4 text-center">Fuel Page</h1>
+                    </div>
+                </div>
+                
+                    <div className="row">
+                    <div className="col-md-5">
+                    <FuelForm {...({ currentId, contactObjects, addOrEdit })}/>
+                    </div>
+                    <div className="col-md-7">
+                        <table className="table table-borderless table-stripped">
+                            <thead className="thead-light">
+                                <tr>
+                                    <th>Gallons</th>
+                                    <th>Delivery Address</th>
+                                    <th>Delivery Date</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    Object.keys(contactObjects).map((key) => (
+                                        <tr key={key}>
+                                            <td>{contactObjects[key].gallon_requested}</td>
+                                            <td>{contactObjects[key].delivery_address}</td>
+                                            <td>{contactObjects[key].delivery_date}</td>
+                                            <td>{contactObjects[key].suggested_price}</td>
+                                            <td>{contactObjects[key].total_due}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+        
+                ) : (
+            <section className="hero">
+                <nav>
+                    <h2>Welcome,</h2>
+                    <button     //logout button
+                    onClick={handleLogout}>Log Out</button>
+                    <button onClick={() => setCount(!count)}>
+                        Fuel Form
+                    </button>
+                </nav>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 className="display-4 text-center">Profile</h1>
+                    </div>
+                </div>
                 <div className="row">
-                <div className="col-md-5">
-                <FuelForm {...({ currentId, contactObjects, addOrEdit })}/>
+                    <div className="col-md-5">
+                        <ContactForm            //display ContactForm
+                        {...({ currentId, contactObjects, addOrEdit })} ></ContactForm>
+                    </div>
+                    <div className="col-md-7">
+                        <table className="table table-borderless table-stripped">
+                            <thead className="thead-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Zipcode</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    Object.keys(contactObjects).map((key) => (
+                                        <tr key={key}>
+                                            <td>{contactObjects[key].name}</td>
+                                            <td>{contactObjects[key].address}</td>
+                                            <td>{contactObjects[key].city}</td>
+                                            <td>{contactObjects[key].state}</td>
+                                            <td>{contactObjects[key].zipcode}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div className="col-md-7">
-                    <table className="table table-borderless table-stripped">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Gallons</th>
-                                <th>Delivery Address</th>
-                                <th>Delivery Date</th>
-                                <th>Price</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                Object.keys(contactObjects).map((key) => (
-                                    <tr key={key}>
-                                        <td>{contactObjects[key].gallon_requested}</td>
-                                        <td>{contactObjects[key].delivery_address}</td>
-                                        <td>{contactObjects[key].delivery_date}</td>
-                                        <td>{contactObjects[key].suggested_price}</td>
-                                        <td>{contactObjects[key].total_due}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            ) : (
-        <section className="hero">
-            <nav>
-                <h2>Welcome,</h2>
-                <button     //logout button
-                onClick={handleLogout}>Log Out</button>
-                <button onClick={() => setCount(!count)}>
-                    Fuel Form
-                </button>
-            </nav>
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4 text-center">Profile</h1>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5">
-                    <ContactForm            //display ContactForm
-                    {...({ currentId, contactObjects, addOrEdit })} ></ContactForm>
-                </div>
-                <div className="col-md-7">
-                    <table className="table table-borderless table-stripped">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Zipcode</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                Object.keys(contactObjects).map((key) => (
-                                    <tr key={key}>
-                                        <td>{contactObjects[key].name}</td>
-                                        <td>{contactObjects[key].address}</td>
-                                        <td>{contactObjects[key].city}</td>
-                                        <td>{contactObjects[key].state}</td>
-                                        <td>{contactObjects[key].zipcode}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    )
-}
-</div>
-);
-};
-
+            </section>)}
+                )
+            </div>) }
 export default Hero;
