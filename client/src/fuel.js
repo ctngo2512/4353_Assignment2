@@ -43,7 +43,7 @@ const FuelForm = (props) => {
                         <i className="fas fa-user"></i>
                     </div>
                 </div>
-                <input className="form-control" name="gallons requested" placeholder="0"
+                <input className="form-control" name="gallons requested" placeholder="gallons"
                     value={values.gallon_requested}
                     onChange={handleInputChange}
                 />
@@ -82,7 +82,7 @@ const FuelForm = (props) => {
                     <div className="input-group-text">
                     </div>
                 </div>
-                <input className="form-control" name="suggested price" placeholder="0"
+                <input className="form-control" name="suggested price" placeholder="price"
                     value={values.suggested_price}
                     onChange={handleInputChange}
                 />
@@ -92,7 +92,7 @@ const FuelForm = (props) => {
                     <div className="input-group-text">
                     </div>
                 </div>
-                <input className="form-control" name="total due" placeholder="0"
+                <input className="form-control" name="total due" placeholder="due"
                     value={values.total_due}
                     onChange={handleInputChange}
                 />

@@ -30,32 +30,14 @@ const Hero = ({handleLogout}) => {
                     setCurrentId('')
             }
         );
-
-        //Include method to get the user id from App.js
-        //Use that to add to user node in the database
-
-       // alert(fire.auth().id);
-      /*  db.on('value', (snapshot) => {
-
-           // const dt = snapshot.val();
-           // alert(dt);
-           //db.push('Tropicana');
-           return;
-        })*/
-        
       }
   
 
     return (
-        <section className="hero">
-            <nav>
-                <h2></h2>
-                <button onClick={handleLogout}>Log Out</button>
-                <button onClick={handleLogout}>Fuel</button>
-            </nav>
+        <section className="fuelContainer">
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">Profile</h1>
+                    <h1 className="display-4 text-center">Fuel Page</h1>
                 </div>
             </div>
             <div className="row">
@@ -66,22 +48,22 @@ const Hero = ({handleLogout}) => {
                     <table className="table table-borderless table-stripped">
                         <thead className="thead-light">
                             <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Zipcode</th>
+                                <th>Gallons</th>
+                                <th>Delivery Address</th>
+                                <th>Delivery Date</th>
+                                <th>Price</th>
+                                <th>Due</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 Object.keys(contactObjects).map((key) => (
                                     <tr key={key}>
-                                        <td>{contactObjects[key].name}</td>
-                                        <td>{contactObjects[key].address}</td>
-                                        <td>{contactObjects[key].city}</td>
-                                        <td>{contactObjects[key].state}</td>
-                                        <td>{contactObjects[key].zipcode}</td>
+                                        <td>{contactObjects[key].gallon_requested}</td>
+                                        <td>{contactObjects[key].delivery_address}</td>
+                                        <td>{contactObjects[key].delivery_date}</td>
+                                        <td>{contactObjects[key].suggested_price}</td>
+                                        <td>{contactObjects[key].total_due}</td>
                                     </tr>
                                 ))
                             }
