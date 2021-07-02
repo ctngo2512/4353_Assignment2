@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-
+//form for company fuel inputs
 const FuelForm = (props) => {
+
     const initialFieldValues = {
         gallon_requested: '',
         delivery_address: '',
@@ -9,6 +10,7 @@ const FuelForm = (props) => {
         suggested_price: '',
         total_due: ''
     }
+
     var [values, setValues] = useState(initialFieldValues)
 
     useEffect(() => {
@@ -28,7 +30,6 @@ const FuelForm = (props) => {
         })
     }
 
-
     const handleFormSubmit = e => {
         e.preventDefault()
         props.addOrEdit(values);
@@ -36,7 +37,7 @@ const FuelForm = (props) => {
 
     return (
         <form autoComplete="off" onSubmit={handleFormSubmit}>
-            <section className = "fuel">
+            <section className = "contact">
             <div className="form-group input-group">
                 <div className="input-group-prepend">
                     <div className="input-group-text">

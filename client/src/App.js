@@ -6,14 +6,7 @@ import ContactForm from './contactForm';
 import FuelForm from './fuel';
 import './App.css';
 
-const App = (props) => {
-  const {
-    name,
-    address,
-    city,
-    state,
-    zipcode
-  } = props;
+const App = () => {
 
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
@@ -22,16 +15,19 @@ const App = (props) => {
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
 
+  //clear inputs
   const clearInputs = () => {
     setEmail('');
     setPassword('');
   }
 
+  //clear errors in login screen
   const clearErrors = () => {
     setEmailError('');
     setPasswordError('');
   }
 
+  //log into firebase using firebase authentication
   const handleLogin = () => {
     clearErrors();
     fire
@@ -53,6 +49,7 @@ const App = (props) => {
       });
   };
 
+  //sign up using firebase authentication
   const handleSignup = () => {
     clearErrors();
     fire
@@ -73,10 +70,12 @@ const App = (props) => {
       });
   };
 
+  //log out using firebase authentication
   const handleLogout = () => {
     fire.auth().signOut();
   };
 
+  //clear inputs and set user
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user){
@@ -94,6 +93,7 @@ const App = (props) => {
   }, [])
 
   return (
+    //if user is logged in go to hero page, otherwise go to login page
     <div className = "App">
       {user ? (
         <div className="row">

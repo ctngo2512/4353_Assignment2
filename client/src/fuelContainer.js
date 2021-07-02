@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import fire from "./fire";
-//import ContactForm from "./contactForm";
 import FuelForm from './fuel';
 
-const fuelContainer = ({handleLogout}) => {
+//page to display company fuel form
+const FuelContainer = ({handleLogout}) => {
     var [currentId, setCurrentId] = useState('');
     var [contactObjects, setContactObjects] = useState({})
 
@@ -20,7 +20,6 @@ const fuelContainer = ({handleLogout}) => {
 
     //pushes profile contact info to the firebase database
     const addOrEdit = (obj) => {
- 
         var db = fire.database().ref().child('Test').push(
             obj,
             err => {
@@ -75,4 +74,4 @@ const fuelContainer = ({handleLogout}) => {
     )
 }
 
-export default Hero;
+export default fuelContainer;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-
+//contact form takes user inputs for name, address....
 const ContactForm = (props) => {
+
     const initialFieldValues = {
         name: '',
         address: '',
@@ -9,8 +10,10 @@ const ContactForm = (props) => {
         state: '',
         zipcode: ''
     }
+    
     var [values, setValues] = useState(initialFieldValues)
 
+    //if no input yet set to empty, else set values to user inputs
     useEffect(() => {
         if (props.currentId == '')
             setValues({ ...initialFieldValues })
@@ -20,6 +23,7 @@ const ContactForm = (props) => {
             })
     }, [props.currentId, props.contactObjects])
 
+    //save user inputs to values to save to firebase
     const handleInputChange = e => {
         var { name, value } = e.target;
         setValues({
@@ -28,7 +32,7 @@ const ContactForm = (props) => {
         })
     }
 
-
+    //submitting form to firebase and prevent page refresh
     const handleFormSubmit = e => {
         e.preventDefault()
         props.addOrEdit(values);
@@ -78,6 +82,7 @@ const ContactForm = (props) => {
                 </div>
                 <select className="form-control" name="state" 
                     value={values.state}
+                    //pull down option for state
                     onChange={handleInputChange}>
                         <option value="" disabled selected>Select your state</option>
                         <option value="AL">Alabama</option>
@@ -145,7 +150,8 @@ const ContactForm = (props) => {
             </div>
             <div className="form-group">
                 <div className="savebtn">
-                <input type="submit" value={props.currentId == "" ? "Save" : "Update"} className="btn btn-primary btn-block" />
+                <input //save button
+                type="submit" value={props.currentId == "" ? "Save" : "Update"} className="btn btn-primary btn-block" />
                 </div>
                 </div>
             </section>

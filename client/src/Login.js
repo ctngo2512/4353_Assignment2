@@ -1,6 +1,7 @@
 import React from 'react';
 import loginImg from "./loginImg.png";
 
+//login page
 const Login = (props) => {
 
     const { 
@@ -30,12 +31,14 @@ const Login = (props) => {
                 <p className="errorMsg">{passwordError}</p>
                 <div className="btnContainer">
                     {hasAccount ? (
+                        //if has account, sign in
                         <>
                         <button onClick={handleLogin}>Sign In</button>
                         <p>Don't have an account? 
                             <span onClick={() => setHasAccount(!hasAccount)}>Sign Up</span></p>
                         </>
                     ) : (
+                        //if doesn't have account, sign up
                         <>
                         <button onClick={handleSignup}>Sign Up</button>
                         <p>Have an account? 
