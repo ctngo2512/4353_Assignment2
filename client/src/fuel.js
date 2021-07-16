@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import validator from 'validator';
 
 //form for company fuel inputs
 const FuelForm = (props) => {
@@ -34,6 +35,69 @@ const FuelForm = (props) => {
         e.preventDefault()
         props.addOrEdit(values);
     }
+
+    //validation for fuel form 
+    handleValidation(){
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        //date
+        const App = () => {
+  
+            const [errorMessage, setErrorMessage] = useState('')
+              
+            const validateDate = (value) => {
+              
+              if (validator.isDate(delivery_date)) {
+                setErrorMessage('Valid Date :)')
+              } else {
+                setErrorMessage('Enter Valid Date in form of 00/00/0000')
+              }
+            }
+
+        //gallons requested
+        if(!fields["gallon_requested"]){
+           formIsValid = false;
+           errors["gallon_requested"] = "Cannot be empty";
+        }
+  
+        if(typeof fields["gallon_requested"] !== "undefined"){
+           if(!fields["gallon_requested"].match(/^[0-9]+$/)){
+              formIsValid = false;
+              errors["gallon_requested"] = "Only numbers";
+           }        
+        }
+   
+        //suggested price
+        if(!fields["suggested_price"]){
+            formIsValid = false;
+            errors["suggested_price"] = "Cannot be empty";
+         }
+   
+         if(typeof fields["suggested_price"] !== "undefined"){
+            if(!fields["suggested_price"].match(/^[0-9]+$/)){
+               formIsValid = false;
+               errors["suggested_price"] = "Only numbers";
+            }        
+         }
+         
+         //total due
+         if(!fields["total_due"]){
+            formIsValid = false;
+            errors["total_due"] = "Cannot be empty";
+         }
+   
+         if(typeof fields["total_due"] !== "undefined"){
+            if(!fields["total_due"].match(/^[0-9]+$/)){
+               formIsValid = false;
+               errors["total_due"] = "Only numbers";
+            }        
+         }
+
+       this.setState({errors: errors});
+       return formIsValid;
+   }
 
     return (
         <form autoComplete="off" onSubmit={handleFormSubmit}>
